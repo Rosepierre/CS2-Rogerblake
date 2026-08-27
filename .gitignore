@@ -1,0 +1,35 @@
+# Compiled object files
+*.o
+*.obj
+# Precompiled headers
+*.gch
+*.pch
+# Executables
+*.exe
+*.out
+*.app
+# Build directories
+build/
+Build/
+build-*/
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+# Temporary files
+*.tmp
+*.log
+*.bak
+*.swp
+# Libraries
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+# IDE-specific files
+*.user
+*.suo
+*.pro.user
