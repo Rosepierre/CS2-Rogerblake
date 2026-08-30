@@ -31,9 +31,9 @@ Lab #1
 
 | Name | Value |
 | :--- | :--- |
-| Name |  |
-| Description | |
+| Name | Game of Life |
+| Description | John Conways game of life|
 | Due Date | - |
-| Status | |
-| Location |  |
+| Status | Complete|
+| Location | https://github.com/Rosepierre/CS2-Rogerblake/tree/main/Cs2/Lab1 |
 | Notes | |
