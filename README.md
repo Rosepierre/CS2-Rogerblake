@@ -37,3 +37,13 @@ Lab #1
 | Status | Complete|
 | Location | https://github.com/Rosepierre/CS2-Rogerblake/tree/main/Cs2/Lab1 |
 | Notes | |
+
+Lab #2
+| Name | Value |
+| :--- | :--- |
+| Name | PointDistance |
+| Description | Generates random points then does point distance based on your input points|
+| Due Date | - |
+| Status | Complete|
+| Location | https://github.com/Rosepierre/CS2-Rogerblake/tree/main/Cs2/Lab2|
+| Notes | |
