@@ -33,8 +33,23 @@ points::Point* points::Point::calcNearestPoint(Point* pointList[], unsigned long
 {
     if (arrSize > 0)
     {
-        
+        double minDistance = distPoints(*pointList[0]);
+        Point* nearestPoint = pointList[0];
+
+        for (unsigned long i = 1; i < arrSize; i++)
+        {
+            double currentDistance = distPoints(*pointList[i]);
+            if (currentDistance < minDistance)
+            {
+                minDistance = currentDistance;
+                nearestPoint = pointList[i];
+            }
+        }
+
+        return nearestPoint;
     }
+
+    return nullptr;
 }
 
 //Setters
@@ -56,5 +71,7 @@ void points::Point::setNearestPoint(Point* newNearestPoint)
 
 double points::Point::distPoints(Point& point)
 {
-    calcNearestPoint(nullptr, 0);
+    double distancex = _x - point._x;
+    double distancey = _y - point._y;
+    return sqrt(distancex * distancex + distancey * distancey);
 }
