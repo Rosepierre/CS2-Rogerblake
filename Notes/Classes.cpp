@@ -5,11 +5,12 @@ using namespace std;
 class Rectangle
 {
     private: 
-    int _side1;
-    int _side2;
+    int _side1 = 0;
+    int _side2 = 0;
 
     public:
-
+    //Constructor
+   
     //setters
 
     void setside1(int s1)
@@ -37,12 +38,19 @@ class Rectangle
 int main(int argc, char* argv[])
 {
     Rectangle r1;
-    Rectangle r2;
+    Rectangle* r2 = new Rectangle;
     r1.setside1(42);
     r1.setside2(15);
+
+    r2->setside1(123);
+    r2->setside2(321);
+
 
     cout << r1.getside1() << endl;
     cout << r1.getside2() << endl;
 
+    delete r2;
     return 0;
 }
+
+
