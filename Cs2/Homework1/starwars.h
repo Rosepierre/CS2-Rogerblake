@@ -37,4 +37,9 @@ namespace starwars {
             _forcePower = force;
         }
     };
+    
+   class Sith
+   {
+
+   };
 }
