@@ -12,29 +12,32 @@ namespace starwars {
             int _forcePower = 75;
         
         public:
-            Jedi(std::string name = "Unknown Jedi");
+            Jedi(std::string name = "Unknown Jedi", int health = 100, int skill = 50, int force = 75);
             int getHealth();
             int getSkill();
             int getForce();
 
-        starwars::Jedi::Jedi(std::string name)
+        starwars::Jedi::Jedi(std::string name, int health, int skill, int force)
         {
             _name = name;
-        }
-
-        int starwars::Jedi::getHealth(int health)
-        {
             _health = health;
-        }
-
-        int starwars::Jedi::getSkill(int skill)
-        {
             _lightsaberSkill = skill;
+            _forcePower = force;
         }
 
-        int starwars::Jedi::getForce(int force)
+        int starwars::Jedi::getHealth()
         {
-            _forcePower = force;
+            return _health;
+        }
+
+        int starwars::Jedi::getSkill()
+        {
+            return _lightsaberSkill;
+        }
+
+        int starwars::Jedi::getForce()
+        {
+            return _forcePower;
         }
     };
     
