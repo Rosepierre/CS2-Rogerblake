@@ -16,33 +16,69 @@ namespace starwars {
             int getHealth();
             int getSkill();
             int getForce();
+    };
 
-        starwars::Jedi::Jedi(std::string name, int health, int skill, int force)
-        {
-            _name = name;
-            _health = health;
-            _lightsaberSkill = skill;
-            _forcePower = force;
-        }
+    starwars::Jedi::Jedi(std::string name, int health, int skill, int force)
+    {
+        _name = name;
+        _health = health;
+        _lightsaberSkill = skill;
+        _forcePower = force;
+    }
 
-        int starwars::Jedi::getHealth()
+    int starwars::Jedi::getHealth()
         {
             return _health;
         }
 
-        int starwars::Jedi::getSkill()
-        {
+    int starwars::Jedi::getSkill()
+    {
             return _lightsaberSkill;
-        }
+    }
 
-        int starwars::Jedi::getForce()
-        {
-            return _forcePower;
-        }
-    };
+    int starwars::Jedi::getForce()
+    {
+        return _forcePower;
+    }
+
+    
     
    class Sith
    {
-
+        private:
+            std::string _sname = "Unknown Sith";
+            int _shealth = 120;
+            int _slightsaberSkill = 60;
+            int _sforcePower = 75;
+        
+        public:
+            Sith(std::string sname= "Unknown Sith", int shealth = 120, int slightsaber = 60, int sforcepower= 75);
+            int getsHealth();
+            int getslightsaber();
+            int getsforcePower();
    };
+
+   
+    starwars::Sith::Sith(std::string sname, int shealth, int sskill, int sforce)
+    {
+        _sname = sname;
+        _shealth = shealth;
+        _slightsaberSkill = sskill;
+        _sforcePower = sforce;
+    }
+
+   int starwars::Sith::getsHealth()
+   {
+        return _shealth;
+   }
+
+   int starwars::Sith::getslightsaber()
+   {
+        return 0;
+   }
+
+   int getsforcePower()
+   {
+        return ;
+   }
 }
