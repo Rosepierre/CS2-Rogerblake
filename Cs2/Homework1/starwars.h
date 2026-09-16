@@ -74,11 +74,11 @@ namespace starwars {
 
    int starwars::Sith::getslightsaber()
    {
-        return 0;
+        return _slightsaberSkill;
    }
 
-   int getsforcePower()
+   int starwars::Sith::getsforcePower()
    {
-        return ;
+        return _sforcePower;
    }
 }
