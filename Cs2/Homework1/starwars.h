@@ -19,7 +19,8 @@ namespace starwars {
             int getHealth();
             int getSkill();
             int getForce();
-            void savetoFile();
+            void saveToFile();
+            void getInfo();
 
         void saveToFile(string _name, int _health, int _lightsaberSkill, int _forcePower)
         {
@@ -36,9 +37,15 @@ namespace starwars {
 
         void getInfo() 
         {
-            std::ifstream f("characters.txt");
+            ifstream f("characters.txt");
+            string fromfile;
+            while(getline(f,fromfile))
+            {
+                cout << fromfile << std::endl;
+            }
+            f.close();
         }
-        
+
     };
 
     starwars::Jedi::Jedi(std::string name, int health, int skill, int force)
@@ -50,13 +57,13 @@ namespace starwars {
     }
 
     int starwars::Jedi::getHealth()
-        {
-            return _health;
-        }
+    {
+        return _health;
+    }
 
     int starwars::Jedi::getSkill()
     {
-            return _lightsaberSkill;
+        return _lightsaberSkill;
     }
 
     int starwars::Jedi::getForce()
