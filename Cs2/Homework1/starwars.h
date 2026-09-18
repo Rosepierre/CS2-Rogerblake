@@ -1,5 +1,8 @@
 #pragma once
 #include <iostream>
+#include <fstream>
+
+using namespace std;
 
 namespace starwars {
 
@@ -16,6 +19,20 @@ namespace starwars {
             int getHealth();
             int getSkill();
             int getForce();
+            void savetoFile();
+
+        void saveToFile(string _name, int _health, int _lightsaberSkill, int _forcePower)
+        {
+            std::ofstream file("characters.txt", std::ios::app);
+            
+                if (file)
+                {
+                    file << _name << ' ' 
+                    << _health << ' '
+                    << _lightsaberSkill << ' '
+                    << _forcePower;
+                }
+        } 
     };
 
     starwars::Jedi::Jedi(std::string name, int health, int skill, int force)
@@ -59,7 +76,7 @@ namespace starwars {
    };
 
    
-    starwars::Sith::Sith(std::string sname, int shealth, int sskill, int sforce)
+    starwars::Sith::Sith(string sname, int shealth, int sskill, int sforce)
     {
         _sname = sname;
         _shealth = shealth;
@@ -81,4 +98,6 @@ namespace starwars {
    {
         return _sforcePower;
    }
+
+   
 }
