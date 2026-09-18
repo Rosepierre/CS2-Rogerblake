@@ -1,6 +1,6 @@
 #include <iostream>
-#include <starwars.h>
 #include <fstream>
+#include "starwars.h"
 using namespace std;
 
 int main(int argc, char* argv[])
@@ -16,9 +16,10 @@ int main(int argc, char* argv[])
     
     if (jediname == "Jeremy Bergen")
     {
-        cout << 'Jedi: Jeremy Bergen == oxymoron for he is a dark lord of the sith';
-        abort();
+        cout << "ERROR JEREMY BERGEN is a known dark lord of the sith ";
+        return 0;
     }
+
     cout << "Now your jedi's health: ";
     cin >> jedihealth;
     cout << "Now your jedi's force power: ";
@@ -27,5 +28,9 @@ int main(int argc, char* argv[])
     cin >> jedilightsaber;
 
     starwars::Jedi j1(jediname, jedihealth, jedilightsaber, jediforce);
+    j1.getForce();
+    j1.getHealth();
+    j1.getSkill();
+    j1.saveToFile(jediname, jedihealth, jedilightsaber, jediforce);
 
 }

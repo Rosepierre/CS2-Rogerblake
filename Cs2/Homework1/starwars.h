@@ -32,7 +32,13 @@ namespace starwars {
                     << _lightsaberSkill << ' '
                     << _forcePower;
                 }
-        } 
+        }
+
+        void getInfo() 
+        {
+            std::ifstream f("characters.txt");
+        }
+        
     };
 
     starwars::Jedi::Jedi(std::string name, int health, int skill, int force)
