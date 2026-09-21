@@ -6,7 +6,7 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     string jediname;
-    char maybe;
+    //char maybe;
     int jedihealth;
     int jediforce;
     int jedilightsaber;
@@ -34,5 +34,7 @@ int main(int argc, char* argv[])
     j1.getSkill();
     j1.saveToFile(jediname, jedihealth, jedilightsaber, jediforce);
     j1.getInfo();
+
+    starwars::Sith s1();
 
 }

@@ -20,7 +20,7 @@ namespace starwars {
             int getSkill();
             int getForce();
             void saveToFile();
-            void getInfo();
+            //void getInfo();
 
         void saveToFile(string _name, int _health, int _lightsaberSkill, int _forcePower)
         {
@@ -31,7 +31,7 @@ namespace starwars {
                     file << _name << ' ' 
                     << _health << ' '
                     << _lightsaberSkill << ' '
-                    << _forcePower;
+                    << _forcePower << '\n';
                 }
         }
 
@@ -41,37 +41,12 @@ namespace starwars {
             string fromfile;
             while(getline(f,fromfile))
             {
-                cout << fromfile << std::endl;
+                cout << "The Jedi: " << fromfile << std::endl;
             }
             f.close();
         }
 
     };
-
-    starwars::Jedi::Jedi(std::string name, int health, int skill, int force)
-    {
-        _name = name;
-        _health = health;
-        _lightsaberSkill = skill;
-        _forcePower = force;
-    }
-
-    int starwars::Jedi::getHealth()
-    {
-        return _health;
-    }
-
-    int starwars::Jedi::getSkill()
-    {
-        return _lightsaberSkill;
-    }
-
-    int starwars::Jedi::getForce()
-    {
-        return _forcePower;
-    }
-
-    
     
    class Sith
    {
@@ -82,35 +57,10 @@ namespace starwars {
             int _sforcePower = 75;
         
         public:
-            Sith(std::string sname= "Unknown Sith", int shealth = 120, int slightsaber = 60, int sforcepower= 75);
+            Sith(std::string sname= "Darth Bergen", int shealth = 120, int slightsaber = 60, int sforcepower= 75);
             int getsHealth();
             int getslightsaber();
             int getsforcePower();
    };
 
-   
-    starwars::Sith::Sith(string sname, int shealth, int sskill, int sforce)
-    {
-        _sname = sname;
-        _shealth = shealth;
-        _slightsaberSkill = sskill;
-        _sforcePower = sforce;
-    }
-
-   int starwars::Sith::getsHealth()
-   {
-        return _shealth;
-   }
-
-   int starwars::Sith::getslightsaber()
-   {
-        return _slightsaberSkill;
-   }
-
-   int starwars::Sith::getsforcePower()
-   {
-        return _sforcePower;
-   }
-
-   
 }
