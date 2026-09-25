@@ -48,9 +48,21 @@ int main(int argc, char* argv[])
     j1.getHealth();
     j1.getSkill();
     j1.saveToFile(jediName, jediHealth, jediLightsaber, jediForce);
-    getInfo();
-    j1.loadFromFile();
 
-    //starwars::Sith s1();
+    j1.loadFromFile();
+    getInfo();
+
+    starwars::Sith s1;
+    while (j1.getHealth() > 0 && s1.getsHealth() > 0)
+    {
+    /*s1.getslightsaber();
+
+    j1.attack();
+    j1.getForce();*/
+    j1.takeDamage(s1.sattack());
+    s1.stakeDamage(j1.attack());
+    j1.ouchietime();
+    s1.ouchietime();
+    }
 
 }

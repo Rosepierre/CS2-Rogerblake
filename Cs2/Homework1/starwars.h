@@ -22,6 +22,11 @@ namespace starwars {
             int attack();
             void useForce(int power);
             void takeDamage(int damage);
+
+            void ouchietime()
+            {
+                cout << "Jedi name: " << _name  << " Jedi Health: "<< _health << '\n';
+            }
             //void saveToFile(string name, int health, int skill, int force);
             //void getInfo();
             void saveToFile(std::string name, int health, int lightsaberSkill, int forcePower)
@@ -42,23 +47,37 @@ namespace starwars {
                 std::ifstream f("characters.txt");
                 string line_1;
                 getline(f, line_1);
-                cout << line_1;
+                string line_2;
+                getline(f, line_2);
+                string line_3;
+                getline(f, line_3);
+                string line_4;
+                getline(f, line_4);
+                Jedi(line_1, stoi(line_2), stoi(line_3), stoi(line_4));
             }
  };
     
    class Sith
    {
         private:
-            std::string _sname = "Unknown Sith";
+            string _sname = "Unknown Sith";
             int _shealth = 120;
             int _slightsaberSkill = 60;
             int _sforcePower = 75;
         
         public:
-            Sith(std::string sname= "Darth Bergen", int shealth = 120, int slightsaber = 60, int sforcepower= 75);
+            Sith(string sname= "Darth Bergen", int shealth = 120, int slightsaber = 60, int sforcepower= 75);
             int getsHealth();
             int getslightsaber();
             int getsforcePower();
+            int sattack();
+            void suseForce(int power);
+            void stakeDamage(int damage);
+
+            void ouchietime()
+            {
+                cout << "Sith name: " << _sname  << " Sith Health: "<< _shealth << '\n';
+            }
    };
 
 

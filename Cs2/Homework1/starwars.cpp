@@ -62,9 +62,20 @@ int starwars::Sith::getsforcePower()
 {
     return _sforcePower;
 }
-/*void turnBased()
+
+int starwars::Sith::sattack()
 {
-    ifstream f("characters.txt");
-    
+    return _slightsaberSkill;
 }
-*/
+
+void starwars::Sith::suseForce(int power)
+{
+    int newpow = _sforcePower - power;
+    _sforcePower = newpow;
+}
+
+void starwars::Sith::stakeDamage(int damage)
+{
+    int ouch = _shealth - damage;
+    _shealth = ouch;
+}
