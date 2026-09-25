@@ -23,6 +23,22 @@ int starwars::Jedi::getForce()
     return _forcePower;
 }
 
+int starwars::Jedi::attack()
+{
+    return _lightsaberSkill;
+}
+
+void starwars::Jedi::useForce(int power)
+{
+    int newpow = _forcePower - power;
+    _forcePower = newpow;
+}
+
+void starwars::Jedi::takeDamage(int damage)
+{
+    int ouch = _health - damage;
+    _health = ouch;
+}
 
 starwars::Sith::Sith(string sname, int shealth, int sskill, int sforce)
 {
@@ -46,21 +62,9 @@ int starwars::Sith::getsforcePower()
 {
     return _sforcePower;
 }
-
-void starwars::Jedi::saveToFile(std::string _name, int _health, int _lightsaberSkill, int _forcePower)
-{
-    std::ofstream file("characters.txt", std::ios::app);
-            
-        if (file)
-        {
-            file << _name << '\n' 
-            << _health << '\n'
-            << _lightsaberSkill << '\n'
-            << _forcePower << '\n';
-        }
-}
 /*void turnBased()
 {
-
+    ifstream f("characters.txt");
+    
 }
-*/   
+*/
