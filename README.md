@@ -18,12 +18,12 @@ Assignment #1
 
 | Name | Value |
 | :--- | :--- |
-| Name |  |
-| Description | |
+| Name | Classes foundation |
+| Description | horse jedi |
 | Due Date | - |
-| Status |  |
-| Location |  |
-| Notes | |
+| Status | done |
+| Location | https://github.com/Rosepierre/CS2-Rogerblake/tree/main/Cs2/Homework1 |
+| Notes | horse jedi |
 
 ## Labs 
 

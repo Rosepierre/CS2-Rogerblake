@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
     
     if (jediName == "Jeremy Bergen")
     {
-        cout << "ERROR JEREMY BERGEN is a known dark lord of the sith ";
+        cout << "ERROR JEREMY BERGEN is a known dark lord of the sith \n";
         return 0;
     }
 
