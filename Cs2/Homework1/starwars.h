@@ -19,33 +19,20 @@ namespace starwars {
             int getHealth();
             int getSkill();
             int getForce();
-            void saveToFile();
+            void saveToFile(string name, int health, int skill, int force);
             //void getInfo();
 
-        void saveToFile(string _name, int _health, int _lightsaberSkill, int _forcePower)
-        {
-            std::ofstream file("characters.txt", std::ios::app);
-            
-                if (file)
-                {
-                    file << _name << ' ' 
-                    << _health << ' '
-                    << _lightsaberSkill << ' '
-                    << _forcePower << '\n';
-                }
-        }
-
-        void getInfo() 
+        /*void getInfo() 
         {
             ifstream f("characters.txt");
             string fromfile;
             while(getline(f,fromfile))
             {
-                cout << "The Jedi: " << fromfile << std::endl;
+                cout << fromfile << std::endl;
             }
             f.close();
         }
-
+        */
     };
     
    class Sith
@@ -63,4 +50,17 @@ namespace starwars {
             int getsforcePower();
    };
 
+
+    void saveToFile(std::string name, int health, int lightsaberSkill, int forcePower)
+    {
+        std::ofstream file("characters.txt", std::ios::app);
+            
+            if (file)
+            {
+                file << name << '\n' 
+                << health << '\n'
+                << lightsaberSkill << '\n'
+                << forcePower << '\n';
+            }
+    }
 }

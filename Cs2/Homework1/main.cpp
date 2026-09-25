@@ -23,18 +23,22 @@ int main(int argc, char* argv[])
 
     cout << "Now your jedi's health: ";
     cin >> jedihealth;
-    cout << "Now your jedi's force power: ";
-    cin >> jediforce;
-    cout << "And Finally your jedi's lightsaber skill: ";
+
+    cout << "Your jedi's lightsaber skill: ";
     cin >> jedilightsaber;
 
+    cout << "Now your jedi's force power: ";
+    cin >> jediforce;
+    
+    starwars::saveToFile(jediname, jedihealth, jedilightsaber, jediforce);
+    
     starwars::Jedi j1(jediname, jedihealth, jedilightsaber, jediforce);
     j1.getForce();
     j1.getHealth();
     j1.getSkill();
     j1.saveToFile(jediname, jedihealth, jedilightsaber, jediforce);
-    j1.getInfo();
+    
 
-    starwars::Sith s1();
+    //starwars::Sith s1();
 
 }
