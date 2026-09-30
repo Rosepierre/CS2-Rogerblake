@@ -1,80 +1,51 @@
 #include "starwars.h"
 
-starwars::Character::Character(std::string name, int health, int skill, int force)
+namespace starwars {
+
+Character::Character(std::string name, int health, int skill, int force)
+    : _cName(name), _cHealth(health), _cLightsaberskill(skill), _cForcepower(force)
 {
-    _cName = name;
-    _cHealth = health;
-    _cLightsaberskill = skill;
-    _cForcepower = force;
 }
 
-int starwars::Character::getHealth()
+Jedi::Jedi(std::string name, int health, int skill, int force)
+    : Character(name, health, skill, force)
+{
+}
+
+Sith::Sith(std::string name, int health, int skill, int force)
+    : Character(name, health, skill, force)
+{
+}
+
+int Character::getHealth()
 {
     return _cHealth;
 }
 
-int starwars::Character::getSkill()
+int Character::getSkill()
 {
     return _cLightsaberskill;
 }
 
-int starwars::Jedi::getForce()
-{
-    return _forcePower;
-}
-
-int starwars::Jedi::attack()
-{
-    return _lightsaberSkill;
-}
-
-void starwars::Jedi::useForce(int power)
-{
-    int newpow = _forcePower - power;
-    _forcePower = newpow;
-}
-
-void starwars::Character::takeDamage(int damage)
-{
-    _cHealth = _cHealth - damage;
-}
-
-/*starwars::Sith::Sith(string sname, int shealth, int sskill, int sforce)
-{
-    _sname = sname;
-    _shealth = shealth;
-    _slightsaberSkill = sskill;
-    _sforcePower = sforce;
-}*/
-
-int starwars::Sith::getsHealth()
-{
-    return _cHealth;
-}
-
-int starwars::Sith::getslightsaber()
-{
-    return _cLightsaberskill;
-}
-
-int starwars::Sith::getsforcePower()
+int Character::getForce()
 {
     return _cForcepower;
 }
 
-int starwars::Sith::sattack()
+int Character::attack()
 {
     return _cLightsaberskill;
 }
 
-void starwars::Sith::suseForce(int power)
+int Character::useforce(int power)
 {
-    int newpow = _sforcePower - power;
-    _sforcePower = newpow;
+    _cForcepower = _cForcepower - power;
+    return _cForcepower;
 }
 
-/*void starwars::Sith::stakeDamage(int damage)
+void Character::takeDamage(int damage)
 {
-    int ouch = _shealth - damage;
-    _shealth = ouch;
-}*/
+    _cHealth = _cHealth - damage;
+}
+
+}
