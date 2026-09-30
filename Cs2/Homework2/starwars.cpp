@@ -12,8 +12,29 @@ Jedi::Jedi(std::string name, int health, int skill, int force)
 {
 }
 
+Guardian::Guardian(std::string name, int health, int skill, int force)
+    : Jedi(name, health, skill, force)
+{
+}
+
+Consular::Consular(std::string name, int health, int skill, int force)
+    : Jedi(name, health, skill, force)
+{
+}
+
+
 Sith::Sith(std::string name, int health, int skill, int force)
     : Character(name, health, skill, force)
+{
+}
+
+Acolyte::Acolyte(std::string name, int health, int skill, int force)
+    : Sith(name, health, skill, force)
+{
+}
+
+Darth::Darth(std::string name, int health, int skill, int force)
+    : Sith(name, health, skill, force)
 {
 }
 

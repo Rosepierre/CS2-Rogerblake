@@ -50,30 +50,32 @@ namespace starwars {
 
         void loadFromFile()
         {
-            std::ifstream f("characters.txt");
+            ifstream f("characters.txt");
             if (!f) return;
 
-            std::string name;
+            string name;
             int health, skill, force;
 
-            std::getline(f, name);
+            getline(f, name);
             f >> health >> skill >> force;
 
             *this = Jedi(name, health, skill, force);
         }
     };
 
-    class Guardian : Jedi 
+    class Guardian : public Jedi
     {
-            
+        public:
+        Guardian(string name = "Guardian", int health = 150, int lightsaberskill = 70, int force = 75);
     };
 
     class Consular : Jedi
     {
-
+        public:
+        Consular(string name = "Consular",  int _cHealth = 100, int lightsaberskill = 50, int force = 120);
     };
 
-   class Sith : public Character
+    class Sith : public Character
    {
         public:
             Sith(string sname= "Darth Bergen", int shealth = 120, int slightsaber = 60, int sforcepower= 75);
@@ -86,12 +88,14 @@ namespace starwars {
    
    class Acolyte : Sith
    {
-
+    public:
+        Acolyte(string name ="Acolyte", int health = 80, int lightsaber = 40, int force = 75);
    };
 
    class Darth : Sith
    {
-
+    public:
+        Darth(string name ="Darth", int health = 200, int lightsaber = 100, int force = 75);
    };
 
 }
