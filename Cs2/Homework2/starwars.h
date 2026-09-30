@@ -13,7 +13,7 @@ namespace starwars {
         int _cHealth;
         int _cLightsaberskill;
         int _cForcepower;
-        
+
         public:
         Character(string name = "Unknown force user", int health = 100, int skill = 50, int force = 75);
         int getHealth();
@@ -60,9 +60,19 @@ namespace starwars {
             f >> health >> skill >> force;
 
             *this = Jedi(name, health, skill, force);
-}
- };
-    
+        }
+    };
+
+    class Guardian : Jedi 
+    {
+            
+    };
+
+    class Consular : Jedi
+    {
+
+    };
+
    class Sith : public Character
    {
         public:
@@ -74,4 +84,14 @@ namespace starwars {
             }
    };
    
+   class Acolyte : Sith
+   {
+
+   };
+
+   class Darth : Sith
+   {
+
+   };
+
 }
