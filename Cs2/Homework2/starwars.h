@@ -86,6 +86,7 @@ namespace starwars {
             }
    };
    
+
    class Acolyte : public Sith
    {
     public:
