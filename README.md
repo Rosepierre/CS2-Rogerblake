@@ -25,6 +25,17 @@ Assignment #1
 | Location | https://github.com/Rosepierre/CS2-Rogerblake/tree/main/Cs2/Homework1 |
 | Notes | horse jedi |
 
+Assignment #2
+
+| Name | Value |
+| :--- | :--- |
+| Name | Classes with inheritance  |
+| Description | horse jedi 2 |
+| Due Date | - |
+| Status | done |
+| Location | https://github.com/Rosepierre/CS2-Rogerblake/tree/main/Cs2/Homework2 |
+| Notes | horse jedi 2|
+
 ## Labs 
 
 Lab #1
