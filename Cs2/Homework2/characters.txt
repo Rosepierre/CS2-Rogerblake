@@ -1,4 +1,4 @@
-horse jedi 
+Horse jedi
 100
-100
-100
+300
+1

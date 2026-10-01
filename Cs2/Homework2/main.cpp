@@ -1,5 +1,7 @@
 #include <iostream>
 #include <fstream>
+#include <cstdlib>   
+#include <ctime>
 #include "starwars.h"
 using namespace std;
 
@@ -21,10 +23,19 @@ int main(int argc, char* argv[])
     int jediHealth;
     int jediForce;
     int jediLightsaber;
-    
-    
+    int choice;
+    starwars::Jedi* player = nullptr;
+    starwars::Sith* enemy = nullptr;
 
-    cout << "Here you will create your jedi, First enter your jedi's First and last name: ";
+    cout << "Here you will create your jedi. First pick from a Jedi Consular or a Guaridian:  \n";
+
+    cout << "1 for Consular, 2 for Guardian or 3 for default. \n";
+    
+    cin >> choice;
+
+    cout << "Now your jedi's name: \n";
+
+    cin.ignore();
     getline(cin, jediName);
     
     if (jediName == "Jeremy Bergen")
@@ -42,25 +53,63 @@ int main(int argc, char* argv[])
     cout << "Now your jedi's force power: ";
     cin >> jediForce;
     
-    
-    starwars::Jedi j1(jediName, jediHealth, jediLightsaber, jediForce);
+if(choice == 1)
+{
+    player = new starwars::Consular(
+        jediName, jediHealth, jediLightsaber, jediForce
+    );
 
-    j1.saveToFile(jediName, jediHealth, jediLightsaber, jediForce);
-
-    j1.loadFromFile();
+    player->saveToFile(jediName, jediHealth, jediLightsaber, jediForce);
+    player->loadFromFile();
     getInfo();
+}
 
-    starwars::Sith s1;
-    while (j1.getHealth() > 0 && s1.getHealth() > 0)
+else if(choice == 2)
+{
+    player = new starwars::Guardian(
+        jediName, jediHealth, jediLightsaber, jediForce
+    );
+
+    player->saveToFile(jediName, jediHealth, jediLightsaber, jediForce);
+    player->loadFromFile();
+    getInfo();
+}
+
+else
+{
+    player = new starwars::Jedi(
+        jediName, jediHealth, jediLightsaber, jediForce
+    );
+
+    player->loadFromFile();
+    getInfo();
+}
+       
+   
+
+    srand(static_cast<unsigned int>(time(nullptr)));
+
+    int random = rand() % 2;
+
+    if(random == 0)
     {
-    /*s1.getslightsaber();
-
-    j1.attack();
-    j1.getForce();*/
-    j1.takeDamage(s1.attack());
-    s1.takeDamage(j1.attack());
-    j1.ouchietime();
-    s1.ouchietime();
+        enemy = new starwars::Acolyte;
     }
+    else
+    {
+        enemy = new starwars::Darth;
+    }
+
+while(player->getHealth() > 0 && enemy->getHealth() > 0)
+{
+    player->takeDamage(enemy->attack());
+    enemy->takeDamage(player->attack());
+
+    player->ouchietime();
+    enemy->ouchietime();
+}
+
+delete player;
+delete enemy;
 
 }

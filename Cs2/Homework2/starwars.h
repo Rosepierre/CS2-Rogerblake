@@ -69,7 +69,7 @@ namespace starwars {
         Guardian(string name = "Guardian", int health = 150, int lightsaberskill = 70, int force = 75);
     };
 
-    class Consular : Jedi
+    class Consular : public Jedi
     {
         public:
         Consular(string name = "Consular",  int _cHealth = 100, int lightsaberskill = 50, int force = 120);
@@ -86,13 +86,13 @@ namespace starwars {
             }
    };
    
-   class Acolyte : Sith
+   class Acolyte : public Sith
    {
     public:
         Acolyte(string name ="Acolyte", int health = 80, int lightsaber = 40, int force = 75);
    };
 
-   class Darth : Sith
+   class Darth : public Sith
    {
     public:
         Darth(string name ="Darth", int health = 200, int lightsaber = 100, int force = 75);
