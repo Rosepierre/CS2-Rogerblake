@@ -86,8 +86,6 @@ else
     getInfo();
 }
        
-   
-
     srand(static_cast<unsigned int>(time(nullptr)));
 
     int random = rand() % 2;
