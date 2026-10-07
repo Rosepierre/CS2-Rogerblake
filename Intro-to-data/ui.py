@@ -25,12 +25,12 @@ def addStudent():
     last=input("Last Name: ")
     major=input("Major: ")
     phone=input("Phone: ")
-    insertStudent(first,last,major,phone)
+    insertStudent(first,last,major,phone,)
 
 def deleteStudent():
     # Assignment for students to write this code.
     Student_id = input("Enter the id of the student you wish to delete: ")
-    query=f"""delete from students where id={Student_id};"""
+    query=f"""DELETE FROM students WHERE id={Student_id};"""
     curs.execute(query)
     conn.commit()
 
