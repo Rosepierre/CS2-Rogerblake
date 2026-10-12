@@ -17,31 +17,35 @@ int main(int argc, char* argv[])
     Node* head = 0;
 
     addNode(&head, 42);
+    // cout << "DEBUG: head: " << head << endl;
     addNode(&head, 15);
     addNode(&head, 23);
-    
+    addNode(&head, 9000);
+    addNode(&head, 123);
+
     printList(head);
+    cout << endl;
 
     deleteList(head);
-    
     return 0;
 }
 
 void deleteList(Node* head)
 {
-    Node* tobedeleted = head;
-
+    Node* toBeDeleted = head;
     while(head != nullptr)
     {
-        head = head -> _next;
-        delete tobedeleted;
-        tobedeleted = head;
+        head = head->_next;
+        cout << "toBeDeleted: " << toBeDeleted << endl;
+        delete toBeDeleted;
+        toBeDeleted = head;
     }
 }
 
 void printList(Node* head)
 {
-    while (head != nullptr)
+    // cout << "DEBUG: in printlist: head: " << head << endl;
+    while(head != nullptr)
     {
         cout << head->_data << " ";
         head = head->_next;
@@ -53,10 +57,12 @@ void addNode(Node** head, int data)
     Node* newNode = new Node;
     newNode->_data = data;
     newNode->_next = nullptr;
+    cout << "newNode: " << newNode << endl;
 
     if(*head == nullptr)
     {
         *head = newNode;
+        // return head;
         return;
     }
 
@@ -67,5 +73,5 @@ void addNode(Node** head, int data)
         curNode = curNode->_next;
     }
     curNode->_next = newNode;
-    return;
+    // return head;
 }
