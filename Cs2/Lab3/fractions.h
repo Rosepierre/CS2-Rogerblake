@@ -38,10 +38,12 @@ namespace fractions
             Assume that the greatest is 1 and start at 1
             while i <= min, if a and b % i == 0, that's the gcd
             otherwise increment i
-
+            
             Alternatively, recursively call the method, passing in b, a%b and return a when b == 0
+
+            *** DID THAT IN THE SIMPLIFY FUNCTION ***
             */
-            static int gcd(int, int);
+           /* static int gcd(int, int); */
 
             // Operator overloading
             /*
