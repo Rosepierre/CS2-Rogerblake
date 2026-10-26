@@ -28,7 +28,7 @@ namespace fractions
             Overloaded method is static so it can be called without instantiating class
             Takes in a Fraction and returns a simplified Fraction
             */
-            void simplify();
+            //void simplify();
             static Fraction simplify(Fraction);
 
             /*

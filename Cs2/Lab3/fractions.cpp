@@ -3,20 +3,24 @@
 fractions::Fraction::Fraction(int numerator, int denominator)
     : _numerator(numerator), _denominator(denominator)
 {    
+    if (denominator == 0)
+    {
+        cerr << "Can't Divide by 0: " << endl;
+    }
 }
 
 fractions::Fraction fractions::Fraction::operator+(fractions::Fraction const &frac)
 {
     int answer_numerator = ((_numerator * frac._denominator) + (frac._numerator * _denominator));
     int answer_denominator = (frac._denominator * _denominator);
-    return Fraction(answer_numerator, answer_denominator);
+    return simplify(Fraction(answer_numerator, answer_denominator));
 }
 
 fractions::Fraction fractions::Fraction::operator-(fractions::Fraction const &frac)
 {
     int answer_numerator = ((_numerator * frac._denominator) - (frac._numerator * _denominator));
     int answer_denominator = (frac._denominator * _denominator);
-    return Fraction(answer_numerator, answer_denominator);
+    return simplify(Fraction(answer_numerator, answer_denominator));;
 }
 
 
@@ -24,14 +28,14 @@ fractions::Fraction fractions::Fraction::operator*(Fraction const &frac)
 {
     int answer_numerator = _numerator * frac._numerator;
     int answer_denominator = _denominator * frac._denominator;
-    return Fraction(answer_numerator, answer_denominator);
+    return simplify(Fraction(answer_numerator, answer_denominator));
 }
 
 fractions::Fraction fractions::Fraction::operator/(Fraction const &frac)
 {
     int answer_numerator = _numerator * frac._denominator;
     int answer_denominator = _denominator * frac._numerator;
-    return Fraction(answer_numerator, answer_denominator);
+    return simplify(Fraction(answer_numerator, answer_denominator));
 }
 
 fractions::Fraction fractions::Fraction::simplify(Fraction frac)
@@ -68,17 +72,11 @@ int fractions::Fraction::gcd(int a, int b)
 */
 bool fractions::Fraction::operator==(Fraction const &frac)
 {
-    if(_numerator == frac._numerator && frac._denominator == _denominator)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return _numerator * frac._denominator ==
+    frac._numerator * _denominator;
 }
-
 ostream &fractions::operator<<(ostream &os, const Fraction &frac)
 {
+    os << frac._numerator << "/" << frac._denominator;
     return os;
 }
