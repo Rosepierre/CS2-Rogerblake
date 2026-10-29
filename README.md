@@ -36,6 +36,17 @@ Assignment #2
 | Location | https://github.com/Rosepierre/CS2-Rogerblake/tree/main/Cs2/Homework2 |
 | Notes | horse jedi 2|
 
+Assignment #3
+
+| Name | Value |
+| :--- | :--- |
+| Name | Operator Overloading |
+| Description | horse jedi 3 |
+| Due Date | - |
+| Status | done |
+| Location | https://github.com/Rosepierre/CS2-Rogerblake/blob/main/Cs2/Homework3/main.cpp |
+| Notes | horse jedi 3|
+
 ## Labs 
 
 Lab #1
@@ -57,4 +68,14 @@ Lab #2
 | Due Date | - |
 | Status | Complete|
 | Location | https://github.com/Rosepierre/CS2-Rogerblake/tree/main/Cs2/Lab2|
+| Notes | |
+
+Lab #3
+| Name | Value |
+| :--- | :--- |
+| Name | Fractions |
+| Description | Does fraction stuff|
+| Due Date | - |
+| Status | Complete|
+| Location | https://github.com/Rosepierre/CS2-Rogerblake/blob/main/Cs2/Lab3/main.cpp|
 | Notes | |
