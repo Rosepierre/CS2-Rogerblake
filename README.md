@@ -79,3 +79,13 @@ Lab #3
 | Status | Complete|
 | Location | https://github.com/Rosepierre/CS2-Rogerblake/blob/main/Cs2/Lab3/main.cpp|
 | Notes | |
+
+Lab #4
+| Name | Value |
+| :--- | :--- |
+| Name | Doubly linked lists |
+| Description ||
+| Due Date | - |
+| Status | Complete|
+| Location | https://github.com/Rosepierre/CS2-Rogerblake/tree/main/Cs2/Lab4|
+| Notes | |
