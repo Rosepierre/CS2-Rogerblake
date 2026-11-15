@@ -45,6 +45,19 @@ List<T1>::List()
 template <class T1>
 List<T1>::~List()
 {
+    Node<T1>* current = _head;
+
+    while (current != nullptr)
+    {   
+        Node<T1>* nextNode = current->getNext();
+
+        delete current;
+
+        current = nextNode;
+    }
+    _head = nullptr;
+    _tail = nullptr;
+    listSize = 0;
 
 }
 
@@ -94,7 +107,12 @@ void List<T1>::push_front(T1 data)
 template <class T1>
 T1 List<T1>::front()
 {
-
+    if(empty())
+    {
+        cout << "Empty List" << endl;
+        return 0;
+    }
+    return _head->getData();
 }
 
 // remove the first element from the list and return its data
@@ -102,7 +120,30 @@ T1 List<T1>::front()
 template <class T1>
 T1 List<T1>::pop_front()
 {
+    if(empty())
+    {
+        cout << "Empty List" << endl;
+        return 0;
+    }
+    if(listSize == 1)
+    {
+        T1 removedData = _head->getData();
 
+        delete _head;
+
+        _head = nullptr;
+        _tail = nullptr;
+        listSize--;
+        return removedData;
+    }
+
+    Node<T1>* oldHead = _head;
+    T1 removedData = oldHead->getData();
+    _head = _head->getNext();
+    _head->setPrev(nullptr);
+    delete oldHead;
+    listSize--;
+    return removedData;
 }
 
 // add an element to the end of hte list, updating _tail
@@ -133,7 +174,12 @@ void List<T1>::push_back(T1 data)
 template <class T1>
 T1 List<T1>::back()
 {
-
+    if(empty())
+    {
+        cout << "Empty List" << endl;
+        return 0;
+    }
+    return _tail->getData();
 }
 
 // remove the last element from the list and return its data
@@ -141,19 +187,64 @@ T1 List<T1>::back()
 template <class T1>
 T1 List<T1>::pop_back()
 {
+    if(empty())
+    {
+        cout << "Empty List" << endl;
+        return 0;
+    }
+    if(listSize == 1)
+    {
+        T1 removedData = _tail->getData();
 
+        delete _tail;
+
+        _head = nullptr;
+        _tail = nullptr;
+        listSize--;
+        return removedData;
+    }
+
+    Node<T1>* oldTail = _tail;
+    T1 removedData = oldTail->getData();
+    _tail = _tail->getPrev();
+    _tail->setNext(nullptr);
+    delete oldTail;
+    listSize--;
+    return removedData;
 }
 
 // overloading <<, should return a space separated stream of all of the elements
-template <class T1>
-ostream &operator<<(ostream &os, const List<T1> &list)
+template <class T2>
+ostream &operator<<(ostream &os, const List<T2> &list)
 {
+    Node<T2>* current = list._head;
 
+    while (current != nullptr)
+    {
+        os << current->getData() << " ";
+        current = current->getNext();
+    }
+
+    return os;
 }
 
 // should iterate through each list to check that they are exactly the same
 template <class T1>
 bool List<T1>::operator==(const List<T1>& rhs)
-{
-    
+{   
+    if (listSize != rhs.listSize)
+    {
+        return false;
+    }
+    Node<T1>* current = _head;
+    Node<T1>* otherCurrent = rhs._head;
+    while(current != nullptr){
+    if(current->getData() != otherCurrent->getData())
+    {
+        return false;
+    }
+    current = current->getNext();
+    otherCurrent = otherCurrent->getNext();
+}
+return true;
 }
